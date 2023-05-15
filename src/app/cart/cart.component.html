@@ -1,0 +1,33 @@
+<body>
+
+    <div class="cart-content" *ngIf="products.length != 0">
+        <table>
+            <tbody class="row">
+                <div class="bought-col col-3" *ngFor="let item of products;let i = index;">
+                    <div class="card">
+
+                        <div class="card-header">
+                            <strong class="product-title">{{ item.title }}</strong>
+                        </div>
+
+                        <div class="card-body">
+                            <img [routerLink]="['/info',item.id]" class="item-img" src="{{ item.image }}" alt="">
+                            <p [routerLink]="['info',item.id]">see more</p>
+                            <button class="btn bin-btn" (click)="removeItem(item)"><img class="bin-icon" src="./../../assets/icons/icons8-trash-240.png" alt=""></button>
+                        </div>
+
+                    </div>
+                </div>
+            </tbody>
+        </table>
+
+        <button class="btn btn-black" (click)="cleanCart()">Reset my cart</button>
+    </div>
+
+    <div class="container" *ngIf="products.length == 0">
+        <p class="cart-message">Your shopping cart is empty!</p>
+        <button routerLink = '/' class="btn btn-success">Shop Now!</button>
+    </div>
+</body>
+
+<router-outlet></router-outlet>

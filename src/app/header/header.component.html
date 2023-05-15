@@ -1,0 +1,15 @@
+
+<header>
+    <div class="navbar navbar-dark bg-danger shadow-sm p-3">
+        <div class="navbar-brand">
+            <img routerLink ='/' class="logo" src="./../../../assets/icons/icons8-pegasus-ios-16/icons8-pegasus-100.png" alt="">
+            <strong class="navbar-brand"> Crown Online Store </strong>
+        </div>
+        <button class="btn" routerLink = '/cart'>
+            <img class="cart-img" src="./../../../assets/icons/icons8-shopping-cart-64 (1).png" alt="">
+            <div class="cart-badge">{{ totalItem }}</div>
+        </button>
+    </div>
+</header>
+
+<router-outlet></router-outlet>
