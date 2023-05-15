@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { CartService } from '../services/cart.service';
 
@@ -11,6 +12,7 @@ import { CartService } from '../services/cart.service';
 export class ProductsComponent implements OnInit{
 
   des: any
+  search_result: any = []
   constructor(private api: ApiService, private cartService: CartService){
 
   }
@@ -21,7 +23,7 @@ export class ProductsComponent implements OnInit{
       this.productList.reverse()
 
       this.productList.forEach((a: any) => {
-        Object.assign(a, {quantity: 1, total: a.price})        
+        Object.assign(a, {quantity: 1, total: a.price})      
       });
     })
   }
@@ -32,5 +34,13 @@ export class ProductsComponent implements OnInit{
     this.cartService.addtoCart(item)
   }
 
+  searchform = new FormGroup({
+    'searchdkey' : new FormControl(null)
+  })
+
+  submitForm(){
+    const searchValue = this.searchform.get('searchdkey')?.value;
+  console.log(searchValue);
+  }
 
 }
