@@ -10,6 +10,7 @@ import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './cart/cart.component';
 import { ApiService } from './services/api.service';
 import { ProductInfoComponent } from './product-info/product-info.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ProductInfoComponent } from './product-info/product-info.component';
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [ApiService, HttpClientModule],
   bootstrap: [AppComponent]

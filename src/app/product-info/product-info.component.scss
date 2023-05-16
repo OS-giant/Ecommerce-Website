@@ -1,7 +1,7 @@
 body {
     overflow: hidden;
     background-color: rgb(233, 232, 232);
-    height: max-content;
+    min-height: 1000px;
 }
 
 ::-webkit-scrollbar{
@@ -25,25 +25,29 @@ ng-container {
 .product-card {
     display: flex;
     padding-top: 5%;
-    width: 500px;
+    width: 100%;
 }
 
 .product-img {
-    width: 30%;
-    height: 40%;
-    margin-right: 4%;
+    width: 38%;
+    height: 38%;
+    margin-right: 10%;
 }
 
 .product-data {
     display: block;
+    width: 100%;
 }
 
 .product-des {
-    max-width: 50%;
+    width: 100%;
 }
 
 .add-to-cart-btn {
-    margin-top: 10%;
+    padding: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 49%;
 }
 
 @media screen and (max-width: 1047px) {

@@ -11,6 +11,8 @@ import { CartService } from '../services/cart.service';
 
 export class ProductsComponent implements OnInit{
 
+  inputValue: string = "";
+  processedValue: any;
   des: any
   search_result: any = []
   constructor(private api: ApiService, private cartService: CartService){
@@ -34,13 +36,15 @@ export class ProductsComponent implements OnInit{
     this.cartService.addtoCart(item)
   }
 
-  searchform = new FormGroup({
-    'searchdkey' : new FormControl(null)
-  })
+  processInput() {
+    this.processedValue = this.inputValue;
+    console.log(this.processedValue, '#val')
 
-  submitForm(){
-    const searchValue = this.searchform.get('searchdkey')?.value;
-  console.log(searchValue);
+    this.productList.forEach((res: any) => {
+      if(res.description.includes(this.processedValue)) {
+        this.search_result = res
+      }
+    });
   }
 
 }

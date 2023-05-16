@@ -12,7 +12,7 @@
 
                         <div class="card-body">
                             <img [routerLink]="['/info',item.id]" class="item-img" src="{{ item.image }}" alt="">
-                            <p [routerLink]="['info',item.id]">see more</p>
+                            <a [routerLink]="['/info',item.id]">see more...</a>
                             <button class="btn bin-btn" (click)="removeItem(item)"><img class="bin-icon" src="./../../assets/icons/icons8-trash-240.png" alt=""></button>
                         </div>
 
@@ -21,7 +21,7 @@
             </tbody>
         </table>
 
-        <button class="btn btn-black" (click)="cleanCart()">Reset my cart</button>
+        <button class="btn btn-primary reset-cart-btn" (click)="cleanCart()">Reset my cart</button>
     </div>
 
     <div class="container" *ngIf="products.length == 0">
