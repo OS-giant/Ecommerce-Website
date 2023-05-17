@@ -7,8 +7,8 @@
       </div>
 
         <div class="row">
-            <ng-container *ngFor="let item of productList">
-                <div class="product-card card col-md-3">
+            <ng-container *ngFor="let item of search_result">
+                <div class="product-card card col-md-3" *ngIf="item != null">
                     <img class="item-img" src="{{ item.image }}" alt="" [routerLink] = "['/info', item.id]"> 
                     <h5 class="product-name">{{ item.title }}</h5>
                     <p class="product-des">{{ item.description }}</p>
